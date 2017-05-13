@@ -1,16 +1,15 @@
 def translate(string)
-  string.split.map {|word| pig_latin(word)}.join(" ")
+  string.split.map { |word| pig_latin(word) }.join(" ")
 end
 
 def pig_latin(string)
-  vowels = "aeiou".chars
+  vowels = %w(a e i o u)
   if vowels.include?(string[0])
-    string + "ay"
+    return string + "ay"
   else
-    i = 1
     consonant = string[0]
+    i = 1
     while i < string.length
-
       if string[i-1] == "q" && string[i] == "u"
         return string[i+1..-1] + consonant + "uay"
       elsif vowels.include?(string[i])

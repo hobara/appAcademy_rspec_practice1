@@ -7,9 +7,10 @@ def shout(string)
 end
 
 def repeat(string, count=2)
-  res = []
-  count.times { res << string }
-  res.join(" ")
+  ([string] * count).join(" ")
+  # res = []
+  # count.times { res << string }
+  # res.join(" ")
 end
 
 def start_of_word(string, length)

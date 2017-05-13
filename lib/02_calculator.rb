@@ -19,14 +19,16 @@ def multiply_several(array)
 end
 
 def power(num1, num2)
-  powered = 1
-  num2.times { powered *= num1 }
-  powered
+  num1 ** num2
+  # powered = 1
+  # num2.times { powered *= num1 }
+  # powered
 end
 
 def factorial(num)
-  return 0 if num == 0
-  res = 1
-  (1..num).each { |n| res *= n }
-  res
+  num == 0 ? 0 : (1..num).reduce(:*)
+  # return 0 if num == 0
+  # res = 1
+  # (1..num).each { |n| res *= n }
+  # res
 end
